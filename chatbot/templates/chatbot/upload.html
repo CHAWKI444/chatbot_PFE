@@ -1,0 +1,16 @@
+{% extends 'chatbot/base.html' %}
+{% load static %}
+
+{% block title %}Uploader un Fichier{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Uploader un Fichier pour le Chatbot</h1>
+    <p>Chargez un fichier PDF pour enrichir la base de connaissances du chatbot.</p>
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Uploader</button>
+    </form>
+</div>
+{% endblock %}

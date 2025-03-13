@@ -1,0 +1,16 @@
+{% extends 'chatbot/base.html' %}
+{% load static %}
+
+{% block title %}Ingérer des Documents{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Ingérer des Documents PDF</h1>
+    <p>Utilisez cette page pour ingérer ou réinitialiser la base de données des documents PDF liés à la franchise.</p>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <button type="submit" name="reset" class="btn btn-secondary">Réinitialiser et Ingérer</button>
+        <button type="submit" class="btn btn-primary">Ingérer uniquement</button>
+    </form>
+</div>
+{% endblock %}

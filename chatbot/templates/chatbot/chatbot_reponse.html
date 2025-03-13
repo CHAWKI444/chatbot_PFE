@@ -1,0 +1,22 @@
+{% extends 'chatbot/base.html' %}
+{% load static %}
+
+{% block title %}Réponse du Chatbot{% endblock %}
+
+{% block content %}
+<div class="card response-card">
+    <h1>Réponse à : "{{ query }}"</h1>
+    <div class="response-content">
+        <p>{{ response }}</p>
+    </div>
+    <h3>Sources :</h3>
+    <ul class="source-list">
+        {% for source in sources %}
+            <li>{{ source }}</li>
+        {% empty %}
+            <li>Aucune source disponible.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'chatbot_query' %}" class="btn btn-secondary">Poser une nouvelle question</a>
+</div>
+{% endblock %}

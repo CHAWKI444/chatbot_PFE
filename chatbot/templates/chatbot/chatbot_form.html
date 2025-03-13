@@ -1,0 +1,16 @@
+{% extends 'chatbot/base.html' %}
+{% load static %}
+
+{% block title %}Poser une Question{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Poser une Question sur la Franchise</h1>
+    <p>Entrez votre question ci-dessous pour obtenir une réponse basée sur les documents ingérés.</p>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <input type="text" name="query" placeholder="Entrez votre question (ex : Qu'est-ce qu'une franchise ?)" required class="input-field">
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+</div>
+{% endblock %}
